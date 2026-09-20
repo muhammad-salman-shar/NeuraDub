@@ -2,8 +2,11 @@ package com.neurasamu.build.neura_dub.di
 
 import android.content.Context
 import androidx.room.Room
+import com.neurasamu.build.neura_dub.data.local.CharacterDao
+import com.neurasamu.build.neura_dub.data.local.LineDao
 import com.neurasamu.build.neura_dub.data.local.NeuraDubDatabase
 import com.neurasamu.build.neura_dub.data.local.ProjectDao
+import com.neurasamu.build.neura_dub.data.local.SceneDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,4 +27,13 @@ object DatabaseModule {
 
     @Provides
     fun provideProjectDao(db: NeuraDubDatabase): ProjectDao = db.projectDao()
+
+    @Provides
+    fun provideCharacterDao(db: NeuraDubDatabase): CharacterDao = db.characterDao()
+
+    @Provides
+    fun provideSceneDao(db: NeuraDubDatabase): SceneDao = db.sceneDao()
+
+    @Provides
+    fun provideLineDao(db: NeuraDubDatabase): LineDao = db.lineDao()
 }
